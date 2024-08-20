@@ -34,7 +34,7 @@ const PythonMenu = () => {
     useEffect(() => {
         const fetchPrograms = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/python-programs'); // Replace with your API endpoint
+                const response = await axios.get('https://tch-nellify-2.onrender.com/python-programs'); // Replace with your API endpoint
                 setPrograms(response.data);
                 setLoading(false);
             } catch (err) {
@@ -48,7 +48,7 @@ const PythonMenu = () => {
 
     const handleListItemClick = async (id) => {
         try {
-            const response = await axios.get(`http://localhost:3000/python-programs/${id}`);
+            const response = await axios.get(`https://tch-nellify-2.onrender.com/python-programs/${id}`);
             setSelectedProgram(response.data);
             setDialogOpen(true);
         } catch (err) {

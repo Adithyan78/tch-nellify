@@ -10,7 +10,7 @@ function ManageUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/admin/users');
+        const response = await axios.get('https://tch-nellify-2.onrender.com/admin/users');
         console.log('Fetched users:', response.data); // Log the data for debugging
         setUsers(response.data);
       } catch (error) {
@@ -26,7 +26,7 @@ function ManageUsers() {
 
   const handleDelete = async (uid) => {
     try {
-      await axios.delete(`http://localhost:3000/admin/users/${uid}`);
+      await axios.delete(`https://tch-nellify-2.onrender.com/admin/users/${uid}`);
       setUsers(users.filter(user => user.uid !== uid));
     } catch (error) {
       setError('Error deleting user.');

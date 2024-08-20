@@ -31,7 +31,7 @@ const CMenu = () => {
     useEffect(() => {
         const fetchPrograms = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/c-programs');
+                const response = await axios.get('https://tch-nellify-2.onrender.com/c-programs');
                 setPrograms(response.data);
                 setLoading(false);
             } catch (err) {
@@ -45,7 +45,7 @@ const CMenu = () => {
 
     const handleListItemClick = async (id) => {
         try {
-            const response = await axios.get(`http://localhost:3000/c-programs/${id}`);
+            const response = await axios.get(`https://tch-nellify-2.onrender.com/c-programs/${id}`);
             setSelectedProgram(response.data);
             setDialogOpen(true);
         } catch (err) {

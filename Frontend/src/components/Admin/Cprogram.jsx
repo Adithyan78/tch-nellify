@@ -38,7 +38,7 @@ const CPage = () => {
     useEffect(() => {
         const fetchPrograms = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/c-programs');
+                const response = await axios.get('https://tch-nellify-2.onrender.com/c-programs');
                 setPrograms(response.data);
             } catch (error) {
                 console.error('Error fetching programs:', error);
@@ -55,11 +55,11 @@ const CPage = () => {
         try {
             if (selectedProgram) {
                 // Update existing program
-                await axios.put(`http://localhost:3000/c-programs/${selectedProgram._id}`, programData);
+                await axios.put(`https://tch-nellify-2.onrender.com/c-programs/${selectedProgram._id}`, programData);
                 setSnackbarMessage('Program updated successfully!');
             } else {
                 // Add new program
-                await axios.post('http://localhost:3000/c-programs', programData);
+                await axios.post('https://tch-nellify-2.onrender.com/c-programs', programData);
                 setSnackbarMessage('Program added successfully!');
             }
             setSnackbarSeverity('success');
@@ -72,7 +72,7 @@ const CPage = () => {
             setDialogOpen(false); // Close dialog
             setAddProgramDialogOpen(false); // Close add program dialog
             // Fetch updated list
-            const response = await axios.get('http://localhost:3000/c-programs');
+            const response = await axios.get('https://tch-nellify-2.onrender.com/c-programs');
             setPrograms(response.data);
         } catch (error) {
             setSnackbarMessage('Error saving program!');
@@ -92,12 +92,12 @@ const CPage = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/c-programs/${id}`);
+            await axios.delete(`https://tch-nellify-2.onrender.com/c-programs/${id}`);
             setSnackbarMessage('Program deleted successfully!');
             setSnackbarSeverity('success');
             setOpenSnackbar(true);
             // Fetch updated list
-            const response = await axios.get('http://localhost:3000/c-programs');
+            const response = await axios.get('https://tch-nellify-2.onrender.com/c-programs');
             setPrograms(response.data);
         } catch (error) {
             setSnackbarMessage('Error deleting program!');

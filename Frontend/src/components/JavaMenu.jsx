@@ -34,7 +34,7 @@ const JavaMenu = () => {
     useEffect(() => {
         const fetchPrograms = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/java-programs'); // Replace with your API endpoint
+                const response = await axios.get('https://tch-nellify-2.onrender.com/java-programs'); // Replace with your API endpoint
                 setPrograms(response.data);
                 setLoading(false);
             } catch (err) {
@@ -48,7 +48,7 @@ const JavaMenu = () => {
 
     const handleListItemClick = async (id) => {
         try {
-            const response = await axios.get(`http://localhost:3000/java-programs/${id}`);
+            const response = await axios.get(`https://tch-nellify-2.onrender.com/java-programs/${id}`);
             setSelectedProgram(response.data);
             setDialogOpen(true);
         } catch (err) {

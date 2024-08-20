@@ -27,7 +27,7 @@ function SignUp() {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:3000/signup', { name, email, password });
+      const response = await axios.post('https://tch-nellify-2.onrender.com/signup', { name, email, password });
       console.log('Sign-Up successful:', response.data);
       alert(`Account created for email: ${email}`);
       navigate('/signin');

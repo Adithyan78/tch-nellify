@@ -35,7 +35,7 @@ function SignIn() {
       const idToken = await user.getIdToken();
   
       // Send the ID token to your backend server
-      const response = await axios.post('http://localhost:3000/login/google', { token: idToken });
+      const response = await axios.post('https://tch-nellify-2.onrender.com/login/google', { token: idToken });
       const { token, isAdmin } = response.data;
   
       // Store the token in local storage
@@ -64,7 +64,7 @@ function SignIn() {
 
     try {
       // Send email and password to the backend for authentication
-      const response = await axios.post('http://localhost:3000/login', { email, password });
+      const response = await axios.post('https://tch-nellify-2.onrender.com/login', { email, password });
       const { token, isAdmin } = response.data; // Get token and isAdmin from backend response
 
       // Store the token in local storage
@@ -94,7 +94,7 @@ function SignIn() {
     setError('');
 
     try {
-      await axios.post('http://localhost:3000/resetPassword', { email: state.resetEmail });
+      await axios.post('https://tch-nellify-2.onrender.com/resetPassword', { email: state.resetEmail });
       alert('Password reset email sent!');
       setState({ ...state, resetEmail: '' });
       setResetFormVisible(false);

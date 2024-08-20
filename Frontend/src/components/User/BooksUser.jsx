@@ -11,7 +11,7 @@ const BooksUser = () => {
     const fetchDocuments = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/api/documents');
+        const response = await axios.get('https://tch-nellify-2.onrender.com/api/documents');
         setDocuments(response.data);
       } catch (error) {
         console.error('Error fetching documents:', error);

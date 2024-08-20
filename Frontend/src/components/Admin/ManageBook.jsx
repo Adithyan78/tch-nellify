@@ -23,7 +23,7 @@ const ManageBooks = () => {
     const fetchDocuments = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/api/documents');
+        const response = await axios.get('https://tch-nellify-2.onrender.com/api/documents');
         setDocuments(response.data);
       } catch (error) {
         console.error('Error fetching documents:', error);
@@ -67,7 +67,7 @@ const ManageBooks = () => {
   const handleAddSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/documents', {
+      const response = await axios.post('https://tch-nellify-2.onrender.com/api/documents', {
         title,
         description,
         googleDriveLink,
@@ -76,7 +76,7 @@ const ManageBooks = () => {
       console.log(response.data);
       handleCloseAdd();
       // Refetch documents
-      const updatedResponse = await axios.get('http://localhost:3000/api/documents');
+      const updatedResponse = await axios.get('https://tch-nellify-2.onrender.com/api/documents');
       setDocuments(updatedResponse.data);
     } catch (error) {
       console.error(error.response.data);
@@ -87,7 +87,7 @@ const ManageBooks = () => {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:3000/api/documents/${currentDocument._id}`, {
+      const response = await axios.put(`https://tch-nellify-2.onrender.com/api/documents/${currentDocument._id}`, {
         title,
         description,
         googleDriveLink,
@@ -96,7 +96,7 @@ const ManageBooks = () => {
       console.log(response.data);
       handleCloseEdit();
       // Refetch documents
-      const updatedResponse = await axios.get('http://localhost:3000/api/documents');
+      const updatedResponse = await axios.get('https://tch-nellify-2.onrender.com/api/documents');
       setDocuments(updatedResponse.data);
     } catch (error) {
       console.error(error.response.data);
@@ -106,7 +106,7 @@ const ManageBooks = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/documents/${id}`);
+      await axios.delete(`https://tch-nellify-2.onrender.com/api/documents/${id}`);
       // Remove deleted document from state
       setDocuments(documents.filter((doc) => doc._id !== id));
     } catch (error) {

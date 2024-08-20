@@ -33,7 +33,7 @@ const CMenuUser = () => {
     useEffect(() => {
         const fetchPrograms = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/c-programs'); // Replace with your API endpoint
+                const response = await axios.get('https://tch-nellify-2.onrender.com/c-programs'); // Replace with your API endpoint
                 setPrograms(response.data);
                 setLoading(false);
             } catch (err) {
@@ -47,7 +47,7 @@ const CMenuUser = () => {
 
     const handleListItemClick = async (id) => {
         try {
-            const response = await axios.get(`http://localhost:3000/c-programs/${id}`);
+            const response = await axios.get(`https://tch-nellify-2.onrender.com/c-programs/${id}`);
             setSelectedProgram(response.data);
             setDialogOpen(true);
         } catch (err) {
