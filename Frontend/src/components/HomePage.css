@@ -1,0 +1,170 @@
+/* Ensure all cards have the same height */
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add transparency for mobile screens */
+@media (max-width: 600px) {
+  .gridItem {
+    background-color: transparent !important; /* Ensure the card itself is transparent */
+    box-shadow: none !important; /* Optional: Remove shadow for mobile if desired */
+  }
+
+  /* Transparent background for card content */
+  .gridItem .MuiCardContent-root {
+    background-color: transparent !important; /* Ensure the card content is fully transparent */
+    box-shadow: none !important; /* Remove any shadow from card content */
+    color: #020202;
+    /* Ensure text color is readable on transparent background */
+  }
+
+  /* Adjust the title for mobile screens */
+  .styledTitle {
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker transparent black background */
+    color: white; /* White text color */
+    padding: 1rem; /* Increase padding for better visibility and height */
+    border-radius: 1px; /* Rounded corners for better aesthetics */
+    max-width: 100%; /* Ensure it doesn’t overflow */
+    position: fixed; /* Fix the title position */
+    top: 55px; /* Align it at the top */
+    left: 0;
+    right: 0;
+    margin-bottom: 3rem; /* Space between the title and the cards */
+    font-weight: 300; /* Minimal font weight */
+    text-align: center; /* Center the text horizontally */
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+  }
+
+  /* Adjust margin-top for the container to account for the fixed title */
+  .container {
+    margin-top: 4rem; /* Adjust margin-top to ensure space for the fixed title */
+  }
+
+  /* Hide descriptions on mobile screens */
+  .styledSectionDescription,
+  .styledDescription {
+    display: none;
+  }
+}
+
+/* Remove shadow and adjust transform on hover */
+.gridItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure the AppBar styles are retained */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for better contrast */
+  box-shadow: none;
+  padding: 0 1rem; /* Add padding to make room for the logo */
+}
+
+/* Toolbar styles */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Menu button styles */
+.menuButton {
+  margin-right: 1rem;
+}
+
+/* Logo styles */
+.logo {
+  height: 40px; /* Adjust size as needed */
+  margin-right: 1rem;
+}
+
+/* Title styles */
+.title {
+  flex-grow: 1;
+  margin-left: 1rem;
+  color: white; /* White text color for better visibility */
+}
+
+/* Menu items container styles */
+.menuItems {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation button styles */
+.navButton {
+  margin-left: 1rem;
+  color: white; /* White text color for nav buttons */
+}
+
+/* Drawer styles */
+.drawer {
+  width: 240px; /* Width of the drawer */
+}
+
+.drawerItem {
+  color: white; /* Set text color for the items */
+}
+
+.drawerItem:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Slight hover effect */
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  /* Adjust the toolbar and menu items for smaller screens */
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo {
+    height: 30px; /* Smaller logo for smaller screens */
+  }
+
+  .title {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    color: white; /* Ensure the title color is consistent */
+  }
+
+  .menuItems {
+    display: none; /* Hide menu items on small screens */
+  }
+
+  .drawer {
+    width: 200px; /* Adjust width for mobile screens */
+  }
+}
+
+/* Styles for very small screens */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 0.5rem; /* Adjust padding for very small screens */
+  }
+  
+  .menuButton {
+    margin-right: 0.5rem; /* Smaller margin for mobile screens */
+  }
+
+  .logo {
+    height: 25px; /* Smaller logo for very small screens */
+  }
+
+  .navButton {
+    margin-left: 0.5rem; /* Smaller margin for mobile screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .gridItem .MuiCardContent-root .MuiTypography-h5 {
+    font-weight: 500 !important; /* Force apply the font weight */
+    font-family: Arial, Helvetica, sans-serif !important; 
+  }
+}

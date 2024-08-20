@@ -1,0 +1,102 @@
+/* Styles for the AppBar */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for better contrast */
+  box-shadow: none;
+  padding: 0 1rem; /* Add padding to make room for the logo */
+}
+
+/* Toolbar styles */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Menu button styles */
+.menuButton {
+  margin-right: 1rem;
+}
+
+/* Logo styles */
+.logo {
+  height: 40px; /* Adjust size as needed */
+  margin-right: 1rem;
+}
+
+/* Title styles */
+.title {
+  flex-grow: 1;
+  margin-left: 1rem;
+  color: white; /* White text color for better visibility */
+}
+
+/* Menu items container styles */
+.menuItems {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation button styles */
+.navButton {
+  margin-left: 1rem;
+  color: white; /* White text color for nav buttons */
+}
+
+/* Drawer styles */
+.drawer {
+  width: 240px; /* Width of the drawer */
+}
+
+.drawerItem {
+  color: white; /* Set text color for the items */
+}
+
+.drawerItem:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Slight hover effect */
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  /* Adjust the toolbar and menu items for smaller screens */
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo {
+    height: 30px; /* Smaller logo for smaller screens */
+  }
+
+  .title {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    color: white; /* Ensure the title color is consistent */
+  }
+
+  .menuItems {
+    display: none; /* Hide menu items on small screens */
+  }
+
+  .drawer {
+    width: 200px; /* Adjust width for mobile screens */
+  }
+}
+
+/* Styles for very small screens */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 0.5rem; /* Adjust padding for very small screens */
+  }
+  
+  .menuButton {
+    margin-right: 0.5rem; /* Smaller margin for mobile screens */
+  }
+
+  .logo {
+    height: 25px; /* Smaller logo for very small screens */
+  }
+
+  .navButton {
+    margin-left: 0.5rem; /* Smaller margin for mobile screens */
+  }
+}
